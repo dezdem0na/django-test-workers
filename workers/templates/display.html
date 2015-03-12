@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section>
+        <div class="panel panel-primary">
+
+            <div class="panel-heading">
+                <h4>Add new</h4>
+            </div>
+
+            <div class="panel-body">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="{{ message.tags }} alert">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+
+                <form action="{% url 'workers:add_new' cur_model_name %}"
+                      method="POST" class="form_add">
+                    {% csrf_token %}
+
+                    <div>
+                        {% if form %}
+                            {{ form.as_p }}
+                        {% else %}
+                            <div class="alert alert-info">No data available.</div>
+                        {% endif %}
+                    </div>
+
+                    <div>
+                        <button class="btn btn-primary">Send</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        {% if full_dic %}
+            <div class="panel panel-primary">
+
+            <div class="panel-heading">
+                <h4>List</h4>
+            </div>
+
+            <div class="panel-body">
+                <table class="table">
+
+                    <tr>
+                        {% for id, fields in inter_dic.items %}
+                            {% if forloop.first %}
+                                {% for key, value in fields.items %}
+                                    <th class="tkey">{{ key }}</th>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+
+                    {% for id, fields in full_dic.items %}
+                        <tr>
+                            {% for list in fields %}
+                                {% for type, data in list.items %}
+                                    {% for key, value in data.items %}
+                                        {% if value|date:"Y-m-d" %}
+                                            <td data-field='{{ key }}'
+                                                data-id="{{ id }}"
+                                                data-type="{{ type }}"
+                                                class="tvalue"
+                                                title="Double click to edit.">{{ value|date:"Y-m-d" }}</td>
+                                        {% else %}
+                                            <td data-field='{{ key }}'
+                                                data-id="{{ id }}"
+                                                data-type="{{ type }}"
+                                                class="tvalue"
+                                                title="Double click to edit.">{{ value }}</td>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info">No data available.</div>
+        {% endif %}
+
+        </div>
+    </section>
+
+{% endblock %}

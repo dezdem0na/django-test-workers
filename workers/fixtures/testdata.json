@@ -1,0 +1,84 @@
+[
+{
+    "pk": "54fe9c00cd51c27d6b1f1026", 
+    "model": "workers.user", 
+    "fields": {
+        "employed": "2010-03-10", 
+        "paycheck": 1500, 
+        "name": "Dicaprio", 
+        "birthdate": "2000-03-10"
+    }
+},
+{
+    "pk": "54fe9c2ccd51c27d6b1f1027", 
+    "model": "workers.user", 
+    "fields": {
+        "employed": "2000-03-10", 
+        "paycheck": 900, 
+        "name": "Stalone", 
+        "birthdate": "1990-03-10"
+    }
+},
+{
+    "pk": "54fe9c61cd51c27d6b1f1028", 
+    "model": "workers.user", 
+    "fields": {
+        "employed": "2011-03-11", 
+        "paycheck": 500, 
+        "name": "Camberbatch", 
+        "birthdate": "2000-03-13"
+    }
+},
+{
+    "pk": "54fe9ceecd51c27e414ef7f4", 
+    "model": "workers.user", 
+    "fields": {
+        "employed": "2012-03-10", 
+        "paycheck": 700, 
+        "name": "Stone", 
+        "birthdate": "2002-03-10"
+    }
+},
+{
+    "pk": "54fe9d2ccd51c27e414ef7f5", 
+    "model": "workers.user", 
+    "fields": {
+        "employed": "1896-10-10", 
+        "paycheck": 900, 
+        "name": "Yovovich", 
+        "birthdate": "1985-01-10"
+    }
+},
+{
+    "pk": "54fe9d77cd51c27e414ef7f7", 
+    "model": "workers.room", 
+    "fields": {
+        "department": "Ministry of Truth", 
+        "workstations": 100
+    }
+},
+{
+    "pk": "54fe9e59cd51c27e414ef7f8", 
+    "model": "workers.room", 
+    "fields": {
+        "department": "Ministry of infernal affairs", 
+        "workstations": 13
+    }
+},
+{
+    "pk": "54fe9e61cd51c27e414ef7f9", 
+    "model": "workers.room", 
+    "fields": {
+        "department": "Ministry of Love", 
+        "workstations": 14
+    }
+},
+{
+    "pk": "54fe9e7ccd51c27e414ef7fa", 
+    "model": "workers.room", 
+    "fields": {
+        "department": "Ministry of Plenty", 
+        "workstations": 1500
+    }
+}
+]

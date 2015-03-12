@@ -1,0 +1,4 @@
+include README.rst
+recursive-include workers/assets *
+recursive-include workers/templates *
+recursive-include workers/yaml *

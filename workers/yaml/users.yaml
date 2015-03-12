@@ -1,0 +1,14 @@
+# NOTES: Only 'char', 'int' or 'date' types are accepted.
+user:
+- verbose: Пользователи
+- fields:
+   - {title: name, verbose: Имя, type: char}
+   - {title: paycheck, verbose: Зарплата, type: int}
+   - {title: employed, verbose: Дата зачисления, type: date}
+   - {title: birthdate, verbose: Дата рождения, type: date}
+---
+room:
+- verbose: Комнаты
+- fields: 
+   - {title: department, verbose: Отдел, type: char}
+   - {title: workstations, verbose: Вместимость, type: int}

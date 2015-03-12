@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Natalia Reshetnikova">
+    <title>Workers</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css">
+    <script src="{{ STATIC_URL }}js/base.js"></script>
+    <script src="{{ STATIC_URL }}js/ajax.js"></script>
+    {{ form.media }}
+</head>
+
+<body>
+
+<main class="col-lg-7 col-md-10">
+    <header>
+        <a href="/workers"><h1>Application - Workers</h1></a>
+    </header>
+
+    <nav>
+        <ul class="nav nav-pills">
+            {% for name in names_list %}
+                <li class="{% if name == cur_model_name %}active{% endif %}">
+                    <a href="/workers/{{ name }}">{{ name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    {% block content %}{% endblock %}
+</main>
+</body>
+
+</html>
