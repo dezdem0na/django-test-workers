@@ -2,7 +2,7 @@
 Workers
 =======
 
-Workers is a simple Django test app. Application dynamically creates models from yaml file. 
+Workers is a simple Django test app. Application dynamically creates models from yaml file. You can add your yaml file to project directory (along with your manage.py) and name it "models.yaml". Without that file provided default "users.yaml" file will be used.
 
 
 Requirements:

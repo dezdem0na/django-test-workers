@@ -66,6 +66,11 @@ def create_model(description):
     model = type(name, (models.Model,), attrs)
     admin.site.register(model)
 
+if os.path.exists('models.yaml'):
+    ymlfile = 'models.yaml'
+else:
+    ymlfile = os.path.join(BASE_DIR, 'workers/yaml/users.yaml')
+    print "No YML file given."
 
-ymlfile = BASE_DIR+'/workers/yaml/users.yaml'
+
 open_yaml(ymlfile)

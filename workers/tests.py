@@ -35,7 +35,7 @@ class WorkersTest(unittest2.TestCase):
         self.assertRaises(IOError, open_yaml(""))
 
     def test_process_yaml_err(self):
-        self.assertRaises(yaml.YAMLError, open_yaml(BASE_DIR+'/workers/yaml/test_users.yaml'))
+        self.assertRaises(yaml.YAMLError, open_yaml(os.path.join(BASE_DIR, 'workers/yaml/test_users.yaml')))
 
     def test_model_creation(self):
         self.assertTrue(isinstance(self.mdl, models.base.ModelBase))
